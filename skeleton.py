@@ -1,6 +1,7 @@
 import sys
 import time
 import telepot
+import settings
 
 """
 $ python2.7 skeleton.py <token>
@@ -37,8 +38,8 @@ def handle(msg):
     else:
         raise telepot.BadFlavor(msg)
 
-
-TOKEN = sys.argv[1]  # get token from command-line
+# TOKEN = sys.argv[1]  # get token from command-line
+TOKEN = settings.TOKEN # get token from settings file
 
 bot = telepot.Bot(TOKEN)
 bot.notifyOnMessage(handle)
